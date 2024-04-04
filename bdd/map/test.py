@@ -9,19 +9,17 @@ def find_project_file(filename):
     else:
         raise FileNotFoundError(f"The file '{filename}' does not  not found within the 'bdd/data' folder or not found in the directory structure.")
 
-def ler_csv_cenario(massa:str,cenario:str):
+def ler_csv_cenario(massa:str,cenario:str) -> dict:
     caminho = find_project_file(f'{massa}.csv')
    
     print("File path:", caminho)  # Print file path for debugging
     try:
         with open(caminho) as csv:
             leitor_csv = reader(csv,delimiter=';')
-            next(leitor_csv) # pular o cabeçalho
+            header = next(leitor_csv)
             for linha in leitor_csv:
                     if linha[1] == cenario:
-                        print(linha[2])
-                        break
+                            result_map = {header[i]: linha[i] for i in range(1,len(header))}
+                            return result_map
     except FileNotFoundError:
-        print(f"File '{caminho}' not found.")    
-
-ler_csv_cenario('test','CENARIO')        
+        print(f"File '{caminho}' not found.")            
