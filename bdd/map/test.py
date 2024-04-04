@@ -7,14 +7,14 @@ def ler_csv_cenario(massa:str,cenario:str):
     print("File path:", caminho)  # Print file path for debugging
     try:
         with open(caminho) as csv:
-            leitor_csv = reader(csv)
+            leitor_csv = reader(csv,delimiter=';')
             next(leitor_csv) # pular o cabeçalho
             for linha in leitor_csv:
                     if linha[1] == cenario:
-                        print(linha)
+                        print(linha[2])
                         break
     except FileNotFoundError:
         print(f"File '{caminho}' not found.")
     
 
-ler_csv_cenario('test','test')        
+ler_csv_cenario('test','CENARIO')        
