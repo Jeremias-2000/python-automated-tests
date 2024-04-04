@@ -1,11 +1,10 @@
 from bdd.steps.example_steps import Middleware
-import requests
+#import requests
 
 
 
 def faz_requisicao(middleware:Middleware):
-    # acredito que aqui faça o enpoint e o payload
-   
+    
     #endpoint = monta_url()
     if middleware.operacao == 'GET':
         #requests.get()
@@ -24,3 +23,21 @@ def monta_url():
 
 def monta_payload():
     pass
+
+def set_headers():
+    #posso passar kwargs aqui e o que tiver e achar seta no map senao achar lança raiseException
+    pass
+
+    """
+    headers = {
+    'User-Agent': 'My User Agent',  # Example header
+    'Content-Type': 'application/json',  # Example header
+    'Authorization': 'Bearer YourAccessToken',  # Example header for authorization
+}
+
+
+response = requests.get('https://api.example.com', headers=headers)
+
+
+print(response.text)
+    """
