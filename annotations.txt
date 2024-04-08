@@ -1,5 +1,8 @@
 behave features/
 
+behave --format behave_html_formatter:HTMLFormatter -o path/to/output_directory
+
+
 {
   "version": "2.0.0",
   "configurations": [
@@ -18,3 +21,15 @@ behave features/
     }    
   ]
 }
+
+
+behave
+pytest
+
+pip install behave-html-formatter
+behave-html-formatter (1 opcao para gerar relatorio em html)
+
+ wget https://github.com/allure-framework/allure2/releases/download/2.18.1/allure_2.18.1-1_all.deb
+  sudo dpkg -i allure_2.18.1-1_all.deb
+
+  allure serve reports/
