@@ -33,6 +33,6 @@ def step_executo_um_post_com_a_informacao_do_cenario(context,metodoHttp,cenario)
 
 @then('o sistema me traz a listagem de alunos')
 def step_o_sistema_me_traz_a_listagem_de_alunos(context):
-        from request.request import faz_requisicao
+        from request.test import faz_requisicao
         faz_requisicao(middleware=interceptor)
         

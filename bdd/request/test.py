@@ -1,15 +1,20 @@
-from bdd.steps.example_steps import Middleware
+from steps.example_steps import Middleware
+import os
+import json
 #import requests
 
 
 
 def faz_requisicao(middleware:Middleware):
     
-    #endpoint = monta_url()
+    endpoint = monta_url(middleware.massa)
+    middleware.endpoint = endpoint
+    print(endpoint)
     if middleware.operacao == 'GET':
         #requests.get()
         print('fez um GET')
     elif middleware.operacao == 'POST':
+        payload = json.loads(middleware.leitura_csv['json_exemplo'])
         #payload = monta_payload()
         #requests.post(endpoint,json=payload)
         print('fez um POST')
@@ -18,11 +23,11 @@ def faz_requisicao(middleware:Middleware):
         #requests.put(endpoint,json=payload)
         print('fez um PUT')
     
-def monta_url():
-    pass
-
-def monta_payload():
-    pass
+def monta_url(massa:str):
+    endpoint = os.getenv('testando')
+    if endpoint == '':
+        raise Exception('env not found')
+    return endpoint
 
 def set_headers():
     #posso passar kwargs aqui e o que tiver e achar seta no map senao achar lança raiseException

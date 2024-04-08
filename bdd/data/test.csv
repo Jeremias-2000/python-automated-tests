@@ -1,2 +1,2 @@
-page;cenario;certo
-teste;CENARIO;deu certo porra
+page;cenario;certo;json_exemplo
+teste;CENARIO;deu certo porra;{ "company": { "name": "Acme Corporation", "founded_year": 1995, "employees": [ { "name": "John Doe", "position": "CEO", "salary": 150000 }, { "name": "Jane Smith", "position": "CTO", "salary": 120000 }, { "name": "Alice Johnson", "position": "Software Engineer", "salary": 80000 } ], "departments": { "engineering": { "manager": "Jane Smith", "team_count": 3, "teams": ["frontend", "backend", "QA"] }, "marketing": { "manager": "Bob Brown", "team_count": 2, "teams": ["advertising", "public_relations"] } }, "projects": [ { "name": "Project X", "start_date": "2023-01-01", "end_date": "2023-12-31", "budget": 1000000, "team": ["John Doe", "Alice Johnson"] }, { "name": "Project Y", "start_date": "2024-03-15", "end_date": "2024-10-31", "budget": 800000, "team": ["Jane Smith", "Alice Johnson"] } ] } }

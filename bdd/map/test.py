@@ -3,7 +3,7 @@ import os
 
 def find_project_file(filename):
     current_dir = os.getcwd()
-    data_folder = os.path.join(current_dir, 'bdd', 'data')
+    data_folder = os.path.join(current_dir, '..','data')
     if os.path.exists(data_folder):
         return f'{data_folder}/{filename}'
     else:

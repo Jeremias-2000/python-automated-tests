@@ -9,8 +9,9 @@ behave features/
         "type": "python",
         "request": "launch",
         "module": "behave",
-        "cwd": "${workspaceFolder}/features",
-        "console": "integratedTerminal",
+        //"program": "${workspaceFolder}/.env/lib/site-packages/behave/__main__.py",
+        "cwd": "${workspaceFolder}/bdd/features",
+        //"console": "integratedTerminal",
         "args": [
             "${file}"
         ]
